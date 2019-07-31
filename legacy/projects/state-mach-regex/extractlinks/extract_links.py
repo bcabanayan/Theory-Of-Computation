@@ -12,6 +12,8 @@ filename = sys.argv[1]
 
 # TODO Read HTML file
 
+f = open(filename, 'r')
+print(f.read())
 
 # TODO Set up regex
 
