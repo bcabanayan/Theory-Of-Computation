@@ -17,19 +17,28 @@ source = f.read()
 
 # TODO Set up regex
 
-# link_regex = r'https|http'
+link_regex = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
 
 # TODO Find links using regex, save in list called 'matches'
 
-matches = urls = re.findall(link_regex, source)
+matches = re.findall(link_regex, source)
 
 # Check matches, print results
 
-print(matches)
+# print(matches)
 
 # TODO Read in links from answers.txt (hint...this is a CSV file), 
 # save in list called 'answer_data'
 
+answer_data = []
+
+with open('answers.txt') as csv_file:
+  csv_reader = csv.reader(csv_file, delimiter=',')
+  line_count = 0
+  for row in csv_reader:
+    answer_data = row
+
+print(answer_data)
 
 # Compare answers with matches found using regex, print out any mismatches
 # UNCOMMENT BELOW WHEN READY TO CHECK IF YOUR REGEX IS FINDING ALL THE LINKS
