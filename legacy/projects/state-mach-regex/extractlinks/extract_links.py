@@ -13,15 +13,20 @@ filename = sys.argv[1]
 # TODO Read HTML file
 
 f = open(filename, 'r')
-print(f.read())
+source = f.read()
 
 # TODO Set up regex
 
+# link_regex = r'https|http'
 
 # TODO Find links using regex, save in list called 'matches'
 
+matches = urls = re.findall(link_regex, source)
 
 # Check matches, print results
+
+print(matches)
+
 # TODO Read in links from answers.txt (hint...this is a CSV file), 
 # save in list called 'answer_data'
 
