@@ -19,7 +19,8 @@ while line != "exit":
     # TODO Else, break number up into area code, prefix, and suffic
     
     else:
-        print(match.groupdict())
+        number_object = match.groupdict()
+        print('Area code: ' +  str(number_object['area_code']) + '\nPrefix: ' + str(number_object['prefix']) + '\nSuffix: ' + str(number_object['suffix']))
         
     
     # As a stretch goal, you can modify your regex to search for country codes
